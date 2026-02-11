@@ -1,15 +1,9 @@
 import { useState, useEffect } from "react";
 
-function Flashcard({ word, level }) {
-  const [isFlipped, setIsFlipped] = useState(false);
-
-  useEffect(() => {
-    console.log(`Flashcard loaded: ${word}`)
-  }, []);
-  
+function Flashcard({ word, level, isFlipped, onFlip }) {
   return (
     <div
-      onClick={() => setIsFlipped(!isFlipped)}
+      onClick={onFlip}
       style={{
         border: "1px solid black",
         padding: "16px",
